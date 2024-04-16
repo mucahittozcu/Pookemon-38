@@ -405,25 +405,20 @@ export default function App() {
       let newXPosition = pre.xPosition 
       let newYPosition = pre.yPosition 
 
-       if(pre.direction === "right"){
-         if(pre.xPosition < boundaries.xAxis.max){
+       if(pre.direction === "right" && pre.xPosition < boundaries.xAxis.max){
           newXPosition = pre.xPosition + 1
-         }
        }
-       else if(pre.direction === "left"){
-        if(pre.xPosition > boundaries.xAxis.min){
+
+       else if(pre.direction === "left" && pre.xPosition > boundaries.xAxis.min){
          newXPosition = pre.xPosition - 1
-        }
       }
-       else if(pre.direction === "down"){
-        if(pre.yPosition < boundaries.yAxis.max){
+
+       else if(pre.direction === "down" && pre.yPosition < boundaries.yAxis.max){
          newYPosition = pre.yPosition + 1
-        }
       }
-       else if(pre.direction === "up"){
-        if(pre.yPosition > boundaries.yAxis.min){
+
+       else if(pre.direction === "up" && pre.yPosition > boundaries.yAxis.min){
          newYPosition = pre.yPosition - 1
-        }
       }
       return {
         ...pre,
